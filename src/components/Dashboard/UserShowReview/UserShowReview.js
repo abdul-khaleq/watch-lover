@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 
 const UserShowReview = () => {
     const [reviews, setReviews] = useState();
-    console.log(reviews)
+    // console.log(reviews)
     useEffect(() => {
         fetch('https://afternoon-shelf-50405.herokuapp.com/reviews')
             .then(res => res.json())
@@ -12,7 +12,7 @@ const UserShowReview = () => {
     }, []);
 
     return (
-      <Container className='py-5'>
+      <Container id="reviews" className='py-5'>
           {/* render services from server side */}
                 <h1>Reviews</h1>
                 <Row xs={1} md={2} lg={3} className="g-4">

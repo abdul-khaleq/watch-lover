@@ -33,24 +33,18 @@ const UserReview = () => {
 
                                     <input required type="number" {...register("rating", { min: 1, max: 5 })} placeholder="Rating must be 1 to 5" />
                                     <textarea required type="text" {...register("sDescription")} placeholder="Short Description"></textarea>
-
+                                    
                                     <input className="btn btn-primary" type="submit" />
                                 </form>
-
                             </div>
-
-                            {/* <div>
-                                <img src="" alt="profile-pic" />
-                            </div> */}
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-6 col-md-6 col-12">
                     <img src={`https://i.ibb.co/xLJwc8j/undraw-Filing-system-re-56h6.png`} alt="" height="200px" />
-
                 </div>
-
             </div>
+            <br /><br />
         </div>
     );
 };
