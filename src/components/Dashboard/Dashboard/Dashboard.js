@@ -1,6 +1,4 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { Nav } from 'react-bootstrap';
 // import './Dashboard.css';
 import {
     BrowserRouter as Router,
@@ -11,10 +9,7 @@ import {
     useRouteMatch,
     NavLink
 } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
-import DashboardHome from '../DashboardHome/DashboardHome';
-import Payment from '../Payment/Payment';
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
     const { admin, logOut, user } = useAuth();
@@ -50,12 +45,12 @@ const Dashboard = () => {
                                     <a className="nav-link" ><i className="fa fa-star"></i><span className="ml-1 d-none d-sm-inline">Make a Admin</span></a>
                                 </li>
                             </NavLink> :
-                                //  <NavLink to="/myOrder">
-                                //     <li className="nav-item">
-                                //         <a className="nav-link" ><i className="fa fa-star"></i><span className="ml-1 d-none d-sm-inline">My Order</span></a>
-                                //     </li>
-                                // </NavLink>
-                                <Nav.Link as={HashLink} to="/myOrder">My Order</Nav.Link>
+                                 <NavLink to="/myOrder">
+                                    <li className="nav-item">
+                                        <a className="nav-link" ><i className="fa fa-star"></i><span className="ml-1 d-none d-sm-inline">My Order</span></a>
+                                    </li>
+                                </NavLink>
+                                // <Nav.Link as={HashLink} to="/myOrder">My Order</Nav.Link>
                                 }
 
 
@@ -86,24 +81,10 @@ const Dashboard = () => {
                         </ul>
                     </div>
                     <div className="col-xl-10 col-sm-9 col-12  py-3">
-                    <Router>
-                    <Switch>
-        <Route exact path={path}>
-          <h3>Please select a topic.</h3>
-        </Route>
-              <Route path={`${path}/payment`}>
-              <Payment></Payment>
-             </Route>
-             </Switch>
-                    </Router>
+                                <h2>Select a option from left side</h2>
                     </div>
                 </div>
             </div>
-
-
-
-
-            
         </div>
     );
 };

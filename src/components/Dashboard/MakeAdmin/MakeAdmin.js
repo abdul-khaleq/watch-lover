@@ -1,6 +1,5 @@
-import React from 'react';
 import { Alert } from 'react-bootstrap';
-import { useState } from 'react/cjs/react.development';
+import React, {useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
 const MakeAdmin = () => {

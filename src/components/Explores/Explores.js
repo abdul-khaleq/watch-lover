@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Explore from '../Explore/Explore';
+import Footer from '../Shared/Footer/Footer';
 
 const Explores = () => {
     const [explores, setExplores] = useState([]);
@@ -16,13 +17,14 @@ const Explores = () => {
         <div>
             {/* render services from server side */}
             <Container className='py-5'>
-                <h1>Products</h1>
+                <h1 className='pb-3'>Products</h1>
                 <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     explores.map(explore =><Explore explore={explore}></Explore>)
                 }
                 </Row>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

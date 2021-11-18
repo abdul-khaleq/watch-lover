@@ -18,7 +18,7 @@ import Payment from './components/Dashboard/Payment/Payment';
 import AddProduct from './components/Dashboard/AddProduct/AddProduct';
 import ManageProducts from './components/Dashboard/ManageProducts/ManageProducts';
 import UserReview from './components/Dashboard/UserReview/UserReview';
-import Footer from './components/Shared/Footer/Footer';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -66,8 +66,10 @@ function App() {
           <AdminRoute exact path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
           </AdminRoute>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
-        <Footer></Footer>
       </Router>
       </AuthProvider>
     </div>
