@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 import './AddProduct.css'
 
 const AddProduct = () => {
@@ -16,14 +17,18 @@ const AddProduct = () => {
         alert("has been added")
     }; 
     return (
-        <div className="add-product">
+        <div>
+            <DashboardHeader/>
+            <div className="add-product"> <br />
+                <h2>Add a product to explore page</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
       <input type="text" defaultValue="name" {...register("name")} /> <br />
       <input type="text" defaultValue="description" {...register("description")} /> <br />
       <input type="text" defaultValue="image url" {...register("image")} /> <br />
       <input type="number" defaultValue="price" {...register("price")} /> <br />
       <input className="btn btn-primary" type="submit" value="add product"/>
-    </form> <br /><br /><br />
+    </form>
+        </div>
         </div>
     );
 };

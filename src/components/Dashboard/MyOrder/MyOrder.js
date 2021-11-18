@@ -3,6 +3,7 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 const MyOrder = () => {
     const {productId} = useParams();
@@ -26,8 +27,9 @@ const MyOrder = () => {
     }
     return (
         <div>
+          <DashboardHeader/>
             <Container className='py-5'>
-                <h1>Orders</h1>
+                <h1>My Orders</h1>
                 <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     orders?.map(order =><Col>

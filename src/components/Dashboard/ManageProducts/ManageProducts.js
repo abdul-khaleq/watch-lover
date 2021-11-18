@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -28,6 +29,7 @@ const ManageProducts = () => {
     }
     return (
         <div>
+            <DashboardHeader/> <br />
             <h2>Manage Products</h2>
             <Container className='py-5'>
                 <Row xs={1} md={2} lg={3} className="g-4">

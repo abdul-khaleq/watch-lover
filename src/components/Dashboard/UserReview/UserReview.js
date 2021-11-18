@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 import './UserReview.css';
 
 const UserReview = () => {
@@ -19,7 +20,10 @@ const UserReview = () => {
 
     }
     return (
-        <div className="container" style={{ marginTop: 100 }}>
+        <div>
+            <DashboardHeader/>
+            <div className="container" style={{ marginTop: 100 }}>
+            <h2>Put a review to improve our products quality</h2>
             <div className="row mt-5" >
                 <div className="col-lg-6 col-md-6 col-12">
                     <div class="card text-center">
@@ -44,7 +48,7 @@ const UserReview = () => {
                     <img src={`https://i.ibb.co/xLJwc8j/undraw-Filing-system-re-56h6.png`} alt="" height="200px" />
                 </div>
             </div>
-            <br /><br />
+        </div>
         </div>
     );
 };

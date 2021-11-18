@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <AuthProvider>
       <Router>
-        <Navigation></Navigation>
+        {/* <Navigation></Navigation> */}
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -45,11 +45,17 @@ function App() {
           <PrivateRoute exact path="/buynow/:productId">
             <BuyNow></BuyNow>
           </PrivateRoute>
-          <PrivateRoute exact path="/myorder">
+          <PrivateRoute exact path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute exact path="/myOrder">
             <MyOrder></MyOrder>
           </PrivateRoute>
           <PrivateRoute exact path="/payment">
             <Payment></Payment>
+          </PrivateRoute>
+          <PrivateRoute exact path="/review">
+            <UserReview></UserReview>
           </PrivateRoute>
           <AdminRoute exact path="/addProduct">
             <AddProduct></AddProduct>
@@ -57,12 +63,6 @@ function App() {
           <AdminRoute exact path="/manageProduct">
             <ManageProducts></ManageProducts>
           </AdminRoute>
-          <PrivateRoute exact path="/dashboard">
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-          <PrivateRoute exact path="/userReview">
-            <UserReview></UserReview>
-          </PrivateRoute>
           <AdminRoute exact path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
           </AdminRoute>

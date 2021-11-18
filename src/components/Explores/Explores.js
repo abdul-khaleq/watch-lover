@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Explore from '../Explore/Explore';
 import Footer from '../Shared/Footer/Footer';
+import Navigation from '../Shared/Navigation/Navigation';
 
 const Explores = () => {
     const [explores, setExplores] = useState([]);
@@ -15,6 +16,7 @@ const Explores = () => {
     }, [])
     return (
         <div>
+            <Navigation/>
             {/* render services from server side */}
             <Container className='py-5'>
                 <h1 className='pb-3'>Products</h1>

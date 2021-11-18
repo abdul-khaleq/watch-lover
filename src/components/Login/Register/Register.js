@@ -3,13 +3,14 @@ import { Alert, Button, Container, Form, Nav, Spinner } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
+import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
   const history = useHistory();
   const location = useLocation();
 const {user,authError, registerUser, isLoading,signInWithGoogle} = useAuth();
-// console.log(user)
+console.log(authError)
 
 const handleOnBlur = e => {
   const field = e.target.name;
@@ -28,7 +29,9 @@ const handleOnBlur = e => {
     signInWithGoogle(location, history)
 }
     return (
-        <Container>
+        <div>
+          <Navigation/>
+          <Container>
             <h1>Register</h1>
             {isLoading && <Spinner animation="border" role="status">
   <span className="visually-hidden">Loading...</span>
@@ -52,20 +55,14 @@ User creating  successfully
 Submit
 </Button>
 <Nav.Link as={HashLink} to="/login">Already have an account? please Login</Nav.Link>
+{authError && <Alert variant="danger">{authError}</Alert>}
 </Form>}
-{/* {isLoading && <Spinner animation="border" role="status">
-  <span className="visually-hidden">Loading...</span>
-</Spinner>} */}
-
-{/* {user?.email && <Alert key='success' variant='success'>
-User creating  successfully {user}
-  </Alert>}
-  {authError && <Alert variant="danger">{authError}</Alert>} */}
 
 <p>----------------------</p>
   <h2>Please Login using Google</h2> <br />
             <button onClick={handleGoogleSignIn} className="btn btn-warning">Google Sign In</button>
         </Container>
+        </div>
     );
 };
 

@@ -1,6 +1,7 @@
 import { Alert } from 'react-bootstrap';
 import React, {useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -29,7 +30,9 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <div className="container mt-5">
+        <div>
+            <DashboardHeader/>
+            <div className="container mt-5">
             <h1>Make A Admin</h1>
             <form onSubmit={handleAdminSubmit}>
                 <div class="input-group mb-3">
@@ -41,6 +44,7 @@ const MakeAdmin = () => {
             </form>
             {success && <Alert severity="success">Made Admin successfully!</Alert>}
             <br /><br />
+        </div>
         </div>
     );
 };

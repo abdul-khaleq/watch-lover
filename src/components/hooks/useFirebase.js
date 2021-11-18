@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,GoogleAuthProvider,signInWithPopup,updateProfile,getIdToken,signOut } from "firebase/auth";
 import initializeFirebase from "../Login/Firebase/firebase.init";
 // initialize Firebase app
@@ -23,7 +22,6 @@ const registerUser = (email, password, name, history) => {
           const newUser = { email, displayName: name };
           setUser(newUser);
           // sessionStorage.setItem("email", newUser.email);
-
           // save user to the database
           saveUser(email, name, 'POST');
           // send name to firebase after creation
@@ -40,8 +38,6 @@ const registerUser = (email, password, name, history) => {
       })
       .finally(() => setIsLoading(false));
 }
-
-
 
 const loginUser = (email, password, location, history) => {
   setIsLoading(true);
@@ -70,8 +66,6 @@ const signInWithGoogle = (location, history) => {
           setAuthError(error.message);
       }).finally(() => setIsLoading(false));
 }
-
-
     //observer user state
     useEffect(() => {
       const unsubscribed = onAuthStateChanged(auth, (user) => {
@@ -88,8 +82,6 @@ const signInWithGoogle = (location, history) => {
       });
       return () => unsubscribed;
   }, [auth])
-
-
 
     // checking admin and not admin
     useEffect(() => {
@@ -118,8 +110,6 @@ const signInWithGoogle = (location, history) => {
       })
           .then()
      }
-
-
     return{user,admin,isLoading,authError,loginUser,registerUser,logOut,signInWithGoogle,token}
 }
 export default useFirebase;
